@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.home-title{
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 5rem;
+    text-align: center;
+    text-transform:capitalize;
+}
+
+.principal-container{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    background-color: #E2E8F0;
+    .section-home{
+        display: flex;
+        flex-direction: column;
+        .button{
+            background-color: #6366F1;
+            color: white;
+            display: inline-block;
+            padding: .6rem 1rem;
+            border-radius: .5rem;
+            transition: background-color .3s;
+            &:hover{
+                cursor: pointer;
+                background-color: #4F46E5;
+            }
+        }
+    }
+}
