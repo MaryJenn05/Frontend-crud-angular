@@ -1,0 +1,39 @@
+.card {
+    max-width: 500px;
+    min-width: 400px;
+    padding: 1.8em;
+    display: flex;
+    flex-direction: column;
+    .edit{
+        .title{
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #4F46E5;
+        }
+    }
+    .inputs-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .box{
+            .subtitle{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.edit{
+    margin-bottom: 1.2rem;
+}
+.btn-close{
+    transition: background-color 0.3s ease-in-out;
+    &:hover{
+        background-color: #E2E8F0;
+    }
+}
+

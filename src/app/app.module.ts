@@ -8,6 +8,8 @@ import { HeaderComponent } from './public/components/header/header.component';
 import { HomeComponent } from './public/pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListEntityComponent } from './registry/pages/list-entity/list-entity.component';
+import { AddEditDialogComponent } from './registry/components/add-edit-dialog/add-edit-dialog.component';
+import { ViewDialogComponent } from './registry/components/view-dialog/view-dialog.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ListEntityComponent } from './registry/pages/list-entity/list-entity.co
     NotFoundComponent,
     HeaderComponent,
     HomeComponent,
-    ListEntityComponent
+    ListEntityComponent,
+    AddEditDialogComponent,
+    ViewDialogComponent
   ],
   imports: [
     BrowserModule,

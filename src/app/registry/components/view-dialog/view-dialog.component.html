@@ -1,0 +1,51 @@
+<div class="entity-container">
+    <mat-card class="card" *ngIf="entity">
+        <div class="edit">
+            <mat-card-title class="title">Entity Data</mat-card-title>
+        </div>
+        <div class="inputs-container">
+            <div class="box">
+                <mat-label class="subtitle">Uen
+                </mat-label>
+                    <p>{{entity.uen}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Issuance Agency
+                </mat-label>
+                    <p>{{entity.issuanceAgency}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Uen Status
+                </mat-label>
+                    <p>{{entity.uenStatus}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Entity Name
+                </mat-label>
+                    <p>{{entity.entityName}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Entity Type
+                </mat-label>
+                    <p>{{entity.entityType}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Een Issue Date
+                </mat-label>
+                    <p>{{entity.uenIssueDate}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Reg Street Name
+                </mat-label>
+                    <p>{{entity.regStreetName}}</p>
+            </div>
+            <div class="box">
+                <mat-label class="subtitle">Reg Postal Code
+                </mat-label>
+                    <p>{{entity.regPostalCode}}</p>
+            </div>
+            <button class="btn-close" mat-raised-button [mat-dialog-close]="false">Cerrar</button>
+        </div>
+
+    </mat-card>
+</div>

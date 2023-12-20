@@ -4,7 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Entity } from '../../models/entity.model';
-
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ViewDialogComponent } from '../../components/view-dialog/view-dialog.component';
 @Component({
   selector: 'app-list-entity',
   templateUrl: './list-entity.component.html',
@@ -21,12 +23,13 @@ export class ListEntityComponent {
   'uenIssueDate',
   'regStreetName',
   'regPostalCode',
-  'actions' ]
+  'actions',
+];
 
   @ViewChild(MatPaginator, {static :true}) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private entityService: EntityService) {
+  constructor(private entityService: EntityService, private router: Router, private dialog: MatDialog) {
     console.log('ListEntityComponent constructor');
   }
 
@@ -65,4 +68,29 @@ export class ListEntityComponent {
     }
 
   }
+
+  deleteEntity(id: number){
+    this.entityService.deleteEntity(id).subscribe({
+      next: response => {
+        console.log(response);
+
+        this.dataSource.data = [];
+
+        this.getAllEntities();
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+    }
+
+    viewEntityDialog(id: number){
+      this.dialog.open(ViewDialogComponent,{
+        data: {
+          id: id,
+        }
+      });
+  }
+
+
 }
