@@ -1,0 +1,79 @@
+.principal-container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .error-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .error-message{
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            line-height: 4rem;
+            margin-top: 2rem;
+        }
+        .error-description{
+            font-size: 1rem;
+            padding: 1rem 2rem;
+        }
+        .button-home{
+            display: inline-block;
+            justify-self: center;
+            padding: 1rem 1rem;
+            border-radius: 0.5rem;
+            background-color: #6366F1;
+            color: white;
+            font-weight:500;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+        }
+        
+    }
+    .img-container{
+        z-index: -1;
+        order: -1;
+        .img-error{
+            max-width: 400px;
+            min-width: 200px;
+        }
+        .img-error{
+            max-width: 200px;
+            min-width: 100px;
+        }
+    }
+    
+}
+@media (min-width: 850px){
+    .principal-container{
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 5rem;
+        .error-container{
+            width: 50%;
+            .error-message{
+                font-size: 4rem;
+                line-height: 6rem;
+            }
+            .error-description{
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+        .img-container{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            .img-error{
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    }
+}
