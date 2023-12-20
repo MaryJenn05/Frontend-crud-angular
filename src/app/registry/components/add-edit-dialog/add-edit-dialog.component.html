@@ -1,0 +1,53 @@
+<div class="principal-container">
+    <mat-card class="card-container">
+        <mat-card-title class="card-title">
+            <span class="title">{{entity ? 'Edit Entity': 'Add Entity'}}</span>
+        </mat-card-title>
+        <form #editForm class="inputs-container" [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Uen</mat-label>
+                <input matInput formControlName="uen" >
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Issuance Agency</mat-label>
+                <input matInput formControlName="issuanceAgency" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Uen Status</mat-label>
+                <input matInput formControlName="uenStatus" >
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Entity Name</mat-label>
+                <input matInput formControlName="entityName" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Entity Type</mat-label>
+                <input matInput formControlName="entityType" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Uen Issue Date</mat-label>
+                <input matInput formControlName="uenIssueDate" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Reg Street Name</mat-label>
+                <input matInput formControlName="regStreetName" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Reg Postal Code</mat-label>
+                <input matInput formControlName="regPostalCode" >
+            </mat-form-field>
+
+            <div class="actions">
+                <button mat-raised-button type="submit"  aria-label="Boton" >{{entity ? 'Editar': 'Guardar'}}</button>
+                <button mat-raised-button [mat-dialog-close]="false" aria-label="Cancelar">Cancelar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

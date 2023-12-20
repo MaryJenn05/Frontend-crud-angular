@@ -7,6 +7,7 @@ import { Entity } from '../../models/entity.model';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewDialogComponent } from '../../components/view-dialog/view-dialog.component';
+import { AddEditDialogComponent } from '../../components/add-edit-dialog/add-edit-dialog.component';
 @Component({
   selector: 'app-list-entity',
   templateUrl: './list-entity.component.html',
@@ -91,6 +92,27 @@ export class ListEntityComponent {
         }
       });
   }
-
-
+  addEntityDialog(){
+    const dialogRef = this.dialog.open(AddEditDialogComponent,{
+      data:{
+        entity: null,
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+        this.dataSource.data = [];
+        this.getAllEntities();
+      });
+  }
+  
+  editEntityDialog(entity : any){
+    const dialogRef =  this.dialog.open(AddEditDialogComponent,{
+      data:{
+        entity : entity,
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+        this.dataSource.data = [];
+        this.getAllEntities();
+      });
+  }
 }

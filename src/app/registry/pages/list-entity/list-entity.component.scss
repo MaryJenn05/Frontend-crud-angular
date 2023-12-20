@@ -10,6 +10,13 @@ th{
     padding: 1.5rem 1rem;
     justify-content: center;
     align-items: center;
+    .options-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    
 }
 .actions-container{
     display: flex;
@@ -22,7 +29,8 @@ th{
 .table-container{
     overflow-x: auto;
     max-width: 100%;
-}
-.table{
-    width: 100%;
+    .table{
+        width: 100%;
+    }
+    
 }
