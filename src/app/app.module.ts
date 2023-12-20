@@ -7,13 +7,15 @@ import { NotFoundComponent } from './public/components/not-found/not-found.compo
 import { HeaderComponent } from './public/components/header/header.component';
 import { HomeComponent } from './public/pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListEntityComponent } from './registry/pages/list-entity/list-entity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ListEntityComponent
   ],
   imports: [
     BrowserModule,
