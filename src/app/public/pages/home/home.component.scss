@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.principal-container{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #E2E8F0;
+    .section-home{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1.5rem;
+        .content-container{
+            display: flex;
+            flex-direction: column;
+            .home-title{
+                margin-top: 2rem;
+                font-weight: 500;
+                font-size: 3rem;
+                line-height: 3.5rem;
+                text-align: center;
+                text-transform:capitalize;
+            }
+            .button-container{
+                display: flex;
+                justify-content: center;
+                margin: 1rem 0 2rem 0;
+                .button{
+                    background-color: #6366F1;
+                    color: white;
+                    display: inline-block;
+                    padding: .6rem 1rem;
+                    border-radius: .5rem;
+                    text-align: center;
+                    transition: background-color .3s;
+                    &:hover{
+                        cursor: pointer;
+                        background-color: #4F46E5;
+                    }
+                }
+            }
+            .home-text{
+                text-align: center;
+            }
+        }
+        .img-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .img-data{
+                width: 90vw;
+                max-width: 250px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 900px){
+    .principal-container{
+        .section-home{
+            flex-direction: row;
+            justify-content: space-between;
+            .content-container{
+                width: 50%;
+                .home-title{
+                    font-size: 4rem;
+                    line-height: 4.5rem;
+                }
+                
+            }
+            .img-container{
+                width: 40vw;
+                .img-data{
+                    width: 100%;
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+th{
+    color: #7289a7;
+}
+
+.principal-container{
+    height: 90vh;
+    padding: 1.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    .options-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    
+}
+.actions-container{
+    display: flex;
+    padding: 1rem  0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+.table-container{
+    overflow-x: auto;
+    max-width: 100%;
+    .table{
+        width: 100%;
+    }
+    
+}

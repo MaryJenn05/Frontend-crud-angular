@@ -1,0 +1,65 @@
+<div class="principal-container">
+    <mat-card class="card-container">
+        <mat-card-title class="card-title">
+            <span class="title">{{entity ? 'Edit Entity': 'Add Entity'}}</span>
+        </mat-card-title>
+        <form #editForm class="inputs-container" [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Uen</mat-label>
+                <input matInput formControlName="uen" >
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Issuance Agency</mat-label>
+                <mat-select formControlName="issuanceAgency">
+                    <mat-option value="ACRA">Accounting and Corporate Regulatory Authority</mat-option>
+                    <mat-option value="IE">IE Singapore</mat-option>
+                    <mat-option value="MUIS">Islamic Religious Council of Singapore</mat-option>
+                    <mat-option value="MCCY">Ministry of Culture, Community and Youth</mat-option>
+                    <mat-option value="MOE">Ministry of Education</mat-option>
+                    <mat-option value="MOF">Ministry of Finance</mat-option>
+                    <mat-option value="MFA">Ministry of Foreign Affairs</mat-option>
+                    <mat-option value="MOH">Ministry of Health</mat-option>
+                    <mat-option value="MCI">Ministry of Communications and Information</mat-option>
+                    <mat-option value="MOM">Ministry of Manpower</mat-option>
+                    <mat-option value="MND">Ministry of National Development</mat-option>
+                    <mat-option value="MAS">Monetary Authority of Singapore</mat-option>
+                    <mat-option value="PA">People's Association</mat-option>
+                    <mat-option value="ROS">Registry of Societies</mat-option>
+                    <mat-option value="SLA">Singapore Land Authority</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Uen Status</mat-label>
+                <input matInput formControlName="uenStatus" >
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Entity Name</mat-label>
+                <input matInput formControlName="entityName" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Entity Type</mat-label>
+                <input matInput formControlName="entityType" >
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Reg Street Name</mat-label>
+                <input matInput formControlName="regStreetName" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Reg Postal Code</mat-label>
+                <input matInput formControlName="regPostalCode" >
+            </mat-form-field>
+
+            <div class="actions">
+                <button mat-raised-button type="submit"  aria-label="Boton" >{{entity ? 'Editar': 'Guardar'}}</button>
+                <button mat-raised-button [mat-dialog-close]="false" aria-label="Cancelar">Cancelar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
