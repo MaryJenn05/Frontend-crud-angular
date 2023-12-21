@@ -11,7 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule} from '@angular/material/card';
 import { MatDialogModule} from '@angular/material/dialog';
 import {ReactiveFormsModule} from "@angular/forms";
-
+import { MatSortModule} from '@angular/material/sort';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -30,7 +31,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatInputModule,
     MatCardModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSortModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }

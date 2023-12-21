@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewDialogComponent } from '../../components/view-dialog/view-dialog.component';
 import { AddEditDialogComponent } from '../../components/add-edit-dialog/add-edit-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-list-entity',
   templateUrl: './list-entity.component.html',
@@ -30,17 +32,24 @@ export class ListEntityComponent {
   @ViewChild(MatPaginator, {static :true}) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private entityService: EntityService, private router: Router, private dialog: MatDialog) {
-    console.log('ListEntityComponent constructor');
+  constructor(private entityService: EntityService, private router: Router, private dialog: MatDialog, private _snackBar : MatSnackBar) {
   }
 
   dataSource = new MatTableDataSource<Entity>([]);
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
   ngOnInit(): void {
     this.getAllEntities();
   } 
 
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
   getAllEntities() {
     let entities: Entity[] = [];
     this.entityService.getAllEntities().subscribe(
@@ -52,9 +61,9 @@ export class ListEntityComponent {
           this.dataSource.data.push(entityData);
           this.dataSource.paginator = this.paginator;
         });
-        console.log(response);
       },
       error => {
+        this.openSnackBar("Error Fetching Entities", "Close");
         console.log(error);
       }
     );
@@ -72,14 +81,13 @@ export class ListEntityComponent {
 
   deleteEntity(id: number){
     this.entityService.deleteEntity(id).subscribe({
-      next: response => {
-        console.log(response);
-
+      next: (response) => {
+        this.openSnackBar("Entity Deleted Successfully", "Close");
         this.dataSource.data = [];
-
         this.getAllEntities();
       },
       error: error => {
+        this.openSnackBar("Error Deleting Entity", "Close");
         console.log(error);
       }
     });
@@ -99,6 +107,7 @@ export class ListEntityComponent {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
+        this.openSnackBar("Entity Added Successfully", "Close");
         this.dataSource.data = [];
         this.getAllEntities();
       });
@@ -112,6 +121,7 @@ export class ListEntityComponent {
     });
     dialogRef.afterClosed().subscribe(result => {
         this.dataSource.data = [];
+        this.openSnackBar("Entity Edited Successfully", "Close");
         this.getAllEntities();
       });
   }
