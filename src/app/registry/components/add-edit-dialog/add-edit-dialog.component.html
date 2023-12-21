@@ -11,7 +11,23 @@
             
             <mat-form-field appearance="outline">
                 <mat-label>Issuance Agency</mat-label>
-                <input matInput formControlName="issuanceAgency" >
+                <mat-select formControlName="issuanceAgency">
+                    <mat-option value="ACRA">Accounting and Corporate Regulatory Authority</mat-option>
+                    <mat-option value="IE">IE Singapore</mat-option>
+                    <mat-option value="MUIS">Islamic Religious Council of Singapore</mat-option>
+                    <mat-option value="MCCY">Ministry of Culture, Community and Youth</mat-option>
+                    <mat-option value="MOE">Ministry of Education</mat-option>
+                    <mat-option value="MOF">Ministry of Finance</mat-option>
+                    <mat-option value="MFA">Ministry of Foreign Affairs</mat-option>
+                    <mat-option value="MOH">Ministry of Health</mat-option>
+                    <mat-option value="MCI">Ministry of Communications and Information</mat-option>
+                    <mat-option value="MOM">Ministry of Manpower</mat-option>
+                    <mat-option value="MND">Ministry of National Development</mat-option>
+                    <mat-option value="MAS">Monetary Authority of Singapore</mat-option>
+                    <mat-option value="PA">People's Association</mat-option>
+                    <mat-option value="ROS">Registry of Societies</mat-option>
+                    <mat-option value="SLA">Singapore Land Authority</mat-option>
+                </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
@@ -29,10 +45,6 @@
                 <input matInput formControlName="entityType" >
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Uen Issue Date</mat-label>
-                <input matInput formControlName="uenIssueDate" >
-            </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Reg Street Name</mat-label>

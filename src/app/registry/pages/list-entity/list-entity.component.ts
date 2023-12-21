@@ -107,7 +107,6 @@ export class ListEntityComponent {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-        this.openSnackBar("Entity Added Successfully", "Close");
         this.dataSource.data = [];
         this.getAllEntities();
       });
@@ -121,7 +120,6 @@ export class ListEntityComponent {
     });
     dialogRef.afterClosed().subscribe(result => {
         this.dataSource.data = [];
-        this.openSnackBar("Entity Edited Successfully", "Close");
         this.getAllEntities();
       });
   }
